@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMSON | Biography</title>
     
-    <!-- Website Favicon Logo (Shows up in the browser tab title bar) -->
+    <!-- Website Favicon Logo -->
     <link rel="icon" type="image/png" href="logo.png">
     
     <!-- Font Awesome for Icons -->
@@ -52,7 +52,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Flexbox handles horizontal alignment for text and circle logo */
         .logo {
             color: var(--text-light);
             font-size: 1.6rem;
@@ -61,16 +60,15 @@
             height: 70px;
             display: inline-flex;
             align-items: center;
-            gap: 12px; /* Space between circular logo and text */
+            gap: 12px;
         }
 
-        /* Turns your logo image into a perfect circle */
         .logo img {
             width: 45px;
             height: 45px;
-            border-radius: 50%; /* Makes image circular */
-            object-fit: cover;   /* Prevents image distortion */
-            border: 2px solid var(--accent); /* Clean accent ring around the logo */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
         }
 
         .logo span {
@@ -95,21 +93,28 @@
             color: var(--accent);
         }
 
-        /* Short-Fitted Hero Section */
+        /* Hero Section blended with the studio portrait mood */
         .hero {
             min-height: auto; 
+            background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            color: var(--text-light);
+            padding: 140px 5% 80px 5%; 
+        }
+
+        /* Dynamic layout container splitting text and portrait */
+        .hero-layout {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--text-light);
-            padding: 120px 5% 60px 5%; 
-            text-align: center;
+            justify-content: space-between;
+            gap: 3rem;
+            text-align: left;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
+            max-width: 600px;
         }
 
         .hero-content h1 {
@@ -127,10 +132,26 @@
         }
 
         .hero-content p {
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+            margin-bottom: 2rem;
             font-size: 1.1rem;
             color: #cbd5e1;
+        }
+
+        /* Container keeping your portrait sharp and styled */
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .btn {
@@ -316,7 +337,9 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-layout { flex-direction: column; text-align: center; gap: 2rem; }
             .hero-content h1 { font-size: 2.2rem; }
+            .hero-image-container img { max-height: 320px; }
             nav { display: none; } 
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
             .contact-buttons-container { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
@@ -339,13 +362,20 @@
         </nav>
     </header>
 
-    <!-- Home (Hero) Section -->
+    <!-- Home (Hero) Section with Portrait Layout -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Samson Lisomona</h1>
-            <h2>Founder & CEO, Lisotech Innovations</h2>
-            <p>Empowering businesses in Lusaka, Zambia through cutting-edge Digital Marketing strategies and seamless Business Registration compliance.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+        <div class="hero-layout">
+            <div class="hero-content">
+                <h1>Samson Lisomona</h1>
+                <h2>Founder & CEO, Lisotech Innovations</h2>
+                <p>Empowering businesses in Lusaka, Zambia through cutting-edge Digital Marketing strategies and seamless Business Registration compliance.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+            
+            <div class="hero-image-container">
+                <!-- Referenced image file directly by name verbatim -->
+                <img src="head.jpg" alt="Samson Lisomona Portrait">
+            </div>
         </div>
     </section>
 
@@ -395,7 +425,7 @@
                 <i class="fa-solid fa-location-dot"></i> Lusaka, Zambia
             </div>
 
-            <!-- Email and Phone transformed into styled button items -->
+            <!-- Contact Buttons -->
             <div class="contact-buttons-container">
                 <a href="mailto:samsonlisomona1@gmail.com" class="btn-contact">
                     <i class="fa-solid fa-envelope"></i> <marquee>samsonlisomona1@gmail.com</marquee>
@@ -409,7 +439,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy;Samson Lisomona || All Rights Reserved.</p>
+        <p>&copy; SAMSON || All Rights Reserved.</p>
         <marquee>🤝 Powered by Lisotech Innovations</marquee>
     </footer>
 
