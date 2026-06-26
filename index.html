@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMSON | Biography</title>
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles & Reset */
@@ -48,14 +47,25 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Logo letters match the exact height of the header bar via line-height */
+        /* Flexbox handles horizontal alignment for text and circle logo */
         .logo {
             color: var(--text-light);
             font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 1px;
-            line-height: 70px; 
             height: 70px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px; /* Space between circular logo and text */
+        }
+
+        /* Turns your logo image into a perfect circle */
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%; /* Makes image circular */
+            object-fit: cover;   /* Prevents image distortion */
+            border: 2px solid var(--accent); /* Optional: clean accent ring around the logo */
         }
 
         .logo span {
@@ -310,9 +320,11 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
-        <div class="logo">SAMSON<span> LISOMONA</span></div>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            SAMSON<span> LISOMONA</span>
+        </div>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -321,7 +333,6 @@
         </nav>
     </header>
 
-    <!-- Home (Hero) Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Samson Lisomona</h1>
@@ -331,7 +342,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-grid">
@@ -342,23 +352,19 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <h2 class="section-title">Lisotech Innovations Services</h2>
         <div class="services-grid">
-            <!-- Service 1 -->
             <div class="service-card">
                 <i class="fa-solid fa-briefcase"></i>
                 <h3>Business Registration</h3>
                 <p>Complete regulatory compliance setup, legal structuring, and administrative filings to formally launch your enterprise in Zambia smoothly.</p>
             </div>
-            <!-- Service 2 -->
             <div class="service-card">
                 <i class="fa-solid fa-bullhorn"></i>
                 <h3>Digital Marketing</h3>
                 <p>Targeted ad campaigns, brand identity building, and strategic online placement to convert traffic into real commercial growth.</p>
             </div>
-            <!-- Service 3 -->
             <div class="service-card">
                 <i class="fa-solid fa-chart-line"></i>
                 <h3>Business Growth</h3>
@@ -367,19 +373,17 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Connect With Me</h2>
         <div class="contact-info">
             <p>Ready to register your business or launch your next digital marketing campaign? Let's discuss how we can take your venture to the next level.</p>
-            
+             
             <div class="location-text">
                 <i class="fa-solid fa-location-dot"></i> Lusaka, Zambia
             </div>
 
-            <!-- Email and Phone transformed into styled button items -->
             <div class="contact-buttons-container">
-                <a href="mailto:samsonlisomona1.com" class="btn-contact">
+                <a href="mailto:samsonlisomona1@gmail.com" class="btn-contact">
                     <i class="fa-solid fa-envelope"></i> <marquee>samsonlisomona1@gmail.com</marquee>
                 </a>
                 <a href="tel:+260974101130" class="btn-contact">
@@ -389,13 +393,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Samson Lisomona. All Rights Reserved.</p>
+        <p>&copy; Samson Lisomona || All Rights Reserved.</p>
         <marquee>🤝 Powered by Lisotech Innovations</marquee>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/260974101130" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
