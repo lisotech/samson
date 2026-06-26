@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMSON | Biography</title>
+    
+    <!-- Website Favicon Logo (Shows up in the browser tab title bar) -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles & Reset */
@@ -65,7 +70,7 @@
             height: 45px;
             border-radius: 50%; /* Makes image circular */
             object-fit: cover;   /* Prevents image distortion */
-            border: 2px solid var(--accent); /* Optional: clean accent ring around the logo */
+            border: 2px solid var(--accent); /* Clean accent ring around the logo */
         }
 
         .logo span {
@@ -320,6 +325,7 @@
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <div class="logo">
             <img src="logo.png" alt="Logo">
@@ -333,6 +339,7 @@
         </nav>
     </header>
 
+    <!-- Home (Hero) Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Samson Lisomona</h1>
@@ -342,6 +349,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-grid">
@@ -352,19 +360,23 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
         <h2 class="section-title">Lisotech Innovations Services</h2>
         <div class="services-grid">
+            <!-- Service 1 -->
             <div class="service-card">
                 <i class="fa-solid fa-briefcase"></i>
                 <h3>Business Registration</h3>
                 <p>Complete regulatory compliance setup, legal structuring, and administrative filings to formally launch your enterprise in Zambia smoothly.</p>
             </div>
+            <!-- Service 2 -->
             <div class="service-card">
                 <i class="fa-solid fa-bullhorn"></i>
                 <h3>Digital Marketing</h3>
                 <p>Targeted ad campaigns, brand identity building, and strategic online placement to convert traffic into real commercial growth.</p>
             </div>
+            <!-- Service 3 -->
             <div class="service-card">
                 <i class="fa-solid fa-chart-line"></i>
                 <h3>Business Growth</h3>
@@ -373,6 +385,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Connect With Me</h2>
         <div class="contact-info">
@@ -382,6 +395,7 @@
                 <i class="fa-solid fa-location-dot"></i> Lusaka, Zambia
             </div>
 
+            <!-- Email and Phone transformed into styled button items -->
             <div class="contact-buttons-container">
                 <a href="mailto:samsonlisomona1@gmail.com" class="btn-contact">
                     <i class="fa-solid fa-envelope"></i> <marquee>samsonlisomona1@gmail.com</marquee>
@@ -393,11 +407,13 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; Samson Lisomona || All Rights Reserved.</p>
+        <p>&copy;Samson Lisomona || All Rights Reserved.</p>
         <marquee>🤝 Powered by Lisotech Innovations</marquee>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/260974101130" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
