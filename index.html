@@ -300,13 +300,48 @@
             color: var(--text-light);
         }
 
-        /* Footer */
+        /* Compact Footer Styles */
         footer {
             background: var(--primary);
             color: #94a3b8;
             text-align: center;
-            padding: 2rem;
+            padding: 1.2rem 2rem; /* Reduced padding from 2.5rem */
             font-size: 0.9rem;
+        }
+
+        /* Footer Social Media Buttons Container */
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 0.6rem 0; /* Reduced margin from 1.2rem */
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Applied original specific brand colors strictly by platform */
+        .social-icon.facebook { background-color: #1877f2; }
+        .social-icon.instagram { background-color: #e1306c; }
+        .social-icon.telegram { background-color: #229ed9; }
+        .social-icon.phone { background-color: #2563eb; }
+
+        /* Animation scaling on interactive hover states */
+        .social-icon:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
 
         /* Floating WhatsApp Button */
@@ -373,7 +408,6 @@
             </div>
             
             <div class="hero-image-container">
-                <!-- Referenced image file directly by name verbatim -->
                 <img src="head.jpg" alt="Samson Lisomona Portrait">
             </div>
         </div>
@@ -437,8 +471,22 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Original Branded Social Elements -->
     <footer>
+        <div class="footer-socials">
+            <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://t.me" class="social-icon telegram" target="_blank" aria-label="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="tel:+260974101130" class="social-icon phone" aria-label="Call Business Number">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
         <p>&copy; SAMSON || All Rights Reserved.</p>
         <marquee>🤝 Powered by Lisotech Innovations</marquee>
     </footer>
