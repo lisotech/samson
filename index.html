@@ -93,7 +93,7 @@
             color: var(--accent);
         }
 
-        /* Hero Section blended with the studio portrait mood - Padding adjusted for slimmer header */
+        /* Hero Section blended with the studio portrait mood */
         .hero {
             min-height: auto; 
             background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
@@ -221,17 +221,23 @@
             margin: 0 auto;
         }
 
+        /* Unified flex column card layout to prevent height jumping */
         .service-card {
             background: #ffffff;
             padding: 2.5rem 2rem;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
 
         .service-card i {
@@ -243,6 +249,74 @@
         .service-card h3 {
             margin-bottom: 1rem;
             color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            flex-grow: 1; /* Pushes interactive tools cleanly to the base line */
+        }
+
+        /* Details & Download Interactive Elements */
+        .service-card details {
+            cursor: pointer;
+            outline: none;
+            background: var(--bg-light);
+            padding: 0.6rem;
+            border-radius: 6px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            text-align: left;
+            width: 100%;
+        }
+
+        .service-card summary {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            user-select: none;
+        }
+
+        .service-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .service-card summary::before {
+            content: '\f05a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+
+        .service-card details[open] summary {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 0.3rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: #10b981; /* Premium Emerald Green */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background: #059669;
         }
 
         /* Contact Section */
@@ -305,7 +379,7 @@
             background: var(--primary);
             color: #94a3b8;
             text-align: center;
-            padding: 1.2rem 2rem; /* Reduced padding from 2.5rem */
+            padding: 1.2rem 2rem;
             font-size: 0.9rem;
         }
 
@@ -314,7 +388,7 @@
             display: flex;
             justify-content: center;
             gap: 1.2rem;
-            margin: 0.6rem 0; /* Reduced margin from 1.2rem */
+            margin: 0.6rem 0;
         }
 
         .social-icon {
@@ -331,13 +405,11 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
         }
 
-        /* Applied original specific brand colors strictly by platform */
         .social-icon.facebook { background-color: #1877f2; }
         .social-icon.instagram { background-color: #e1306c; }
         .social-icon.telegram { background-color: #229ed9; }
         .social-icon.phone { background-color: #2563eb; }
 
-        /* Animation scaling on interactive hover states */
         .social-icon:hover {
             transform: translateY(-4px);
             filter: brightness(1.15);
@@ -406,7 +478,7 @@
                 <p>Empowering businesses in Lusaka, Zambia through cutting-edge Digital Marketing strategies and seamless Business Registration compliance.</p>
                 <a href="#contact" class="btn">Get In Touch</a>
             </div>
-            
+             
             <div class="hero-image-container">
                 <img src="head.jpg" alt="Samson Lisomona Portrait">
             </div>
@@ -428,23 +500,90 @@
     <section id="services" class="services">
         <h2 class="section-title">Lisotech Innovations Services</h2>
         <div class="services-grid">
-            <!-- Service 1 -->
+            <!-- Box 1 -->
             <div class="service-card">
                 <i class="fa-solid fa-briefcase"></i>
                 <h3>Business Registration</h3>
                 <p>Complete regulatory compliance setup, legal structuring, and administrative filings to formally launch your enterprise in Zambia smoothly.</p>
             </div>
-            <!-- Service 2 -->
+            
+            <!-- Box 2 -->
             <div class="service-card">
                 <i class="fa-solid fa-bullhorn"></i>
                 <h3>Digital Marketing</h3>
                 <p>Targeted ad campaigns, brand identity building, and strategic online placement to convert traffic into real commercial growth.</p>
             </div>
-            <!-- Service 3 -->
+            
+            <!-- Box 3 -->
             <div class="service-card">
                 <i class="fa-solid fa-chart-line"></i>
                 <h3>Business Growth</h3>
                 <p>Consultancy services geared toward setting up structural pillars, managing corporate profiles, and unlocking sustainable operational pathways.</p>
+            </div>
+
+            <!-- Box 4: Computer OS Installation -->
+            <div class="service-card">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>Computer OS Installation</h3>
+                <p>Clean environment deployment and operating system setup services configured for enterprise or personal workflow performance.</p>
+                <details>
+                    <summary>Details</summary>
+                    <a href="https://www.mediafire.com/folder/j35t8sw41mwcj/SAMSON+Softies" class="btn-download" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download Files
+                    </a>
+                </details>
+            </div>
+
+            <!-- Box 5: Computer OS Activation -->
+            <div class="service-card">
+                <i class="fa-solid fa-toggle-on"></i>
+                <h3>Computer OS Activation</h3>
+                <p>Official licensing assistance and structural operating system token activations to unlock regular updates and full system features.</p>
+                <details>
+                    <summary>Details</summary>
+                    <a href="https://www.mediafire.com/folder/j35t8sw41mwcj/SAMSON+Softies" class="btn-download" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download Files
+                    </a>
+                </details>
+            </div>
+
+            <!-- Box 6: Microsoft Office Installation -->
+            <div class="service-card">
+                <i class="fa-solid fa-file-invoice"></i>
+                <h3>Microsoft Office Installation</h3>
+                <p>Deployment of productivity office applications suites tailored to handle complex daily professional tasks and business logging.</p>
+                <details>
+                    <summary>Details</summary>
+                    <a href="https://www.mediafire.com/folder/j35t8sw41mwcj/SAMSON+Softies" class="btn-download" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download Files
+                    </a>
+                </details>
+            </div>
+
+            <!-- Box 7: Microsoft Office Activation -->
+            <div class="service-card">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Microsoft Office Activation</h3>
+                <p>Validation processes and authentic application licensing setups to eliminate restricted-mode banner interruptions across suites.</p>
+                <details>
+                    <summary>Details</summary>
+                    <a href="https://www.mediafire.com/folder/j35t8sw41mwcj/SAMSON+Softies" class="btn-download" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download Files
+                    </a>
+                </details>
+            </div>
+
+            <!-- Box 8: PowerISO -->
+            <div class="service-card">
+                <i class="fa-solid fa-compact-disc"></i>
+                <h3>PowerISO</h3>
+                <p>Advanced image file management utility capable of processing, burning, mounting, compressing, and editing virtual drive data.</p>
+                <details>
+                    <summary>Details</summary>
+                    <a href="https://www.mediafire.com/file_premium/iwqvef2ec6svj8u/PowerISO9-x64.exe/file" class="btn-download" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download PowerISO
+                    </a>
+                </details>
             </div>
         </div>
     </section>
